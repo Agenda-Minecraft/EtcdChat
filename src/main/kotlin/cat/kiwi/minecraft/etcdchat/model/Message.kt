@@ -4,18 +4,17 @@ import com.google.gson.Gson
 
 data class Message(
     val type: String,
-    val meta: MessageType,
+    val meta: MessageMeta,
     val content: MCMessage,
 ) {
 }
 
-data class PrivateMessage(
+
+open class MessageMeta(
     val source: String,
-    val target: String
-) : MessageType()
+    val target: String,
+    val fromServer: String
 
-data class PublicMessage(val boardCast: Boolean) : MessageType()
+)
 
-open class MessageType {}
-
-fun Message.toJson() = Gson().toJson(this, Message::class.java)
+fun Message.toJson(): String = Gson().toJson(this, Message::class.java)

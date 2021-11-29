@@ -1,11 +1,8 @@
 package cat.kiwi.minecraft.etcdchat
 
 import cat.kiwi.minecraft.etcdchat.model.*
-import cat.kiwi.minecraft.etcdchat.utils.applyFormatCode
-import cat.kiwi.minecraft.etcdchat.utils.toMessage
-import com.google.gson.Gson
-import io.etcd.jetcd.ByteSequence
-import io.etcd.jetcd.Client
+import cat.kiwi.minecraft.etcdchat.util.applyFormatCode
+import cat.kiwi.minecraft.etcdchat.util.toMessage
 
 
 class Application {

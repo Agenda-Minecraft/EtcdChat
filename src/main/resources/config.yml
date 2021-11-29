@@ -1,0 +1,6 @@
+version: 1
+
+etcd-address: "ip:///127.0.0.1:12379"
+etcd-route: "/server/chat_message"
+
+default-pattern: "%multiverse_world_alias% &#34D399%luckperms_prefix% %player_name% &#9CA3AF> &#F3F4F6"

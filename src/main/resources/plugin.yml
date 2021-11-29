@@ -1,0 +1,5 @@
+name: EtcdChat
+main: cat.kiwi.minecraft.etcdchat.EtcdChat
+version: 0.0.1
+author: moeKiwiSAMA, langua
+depend: [PlaceholderAPI]

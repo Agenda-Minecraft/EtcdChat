@@ -1,4 +1,4 @@
-package cat.kiwi.minecraft.etcdchat.utils
+package cat.kiwi.minecraft.etcdchat.util
 
 import cat.kiwi.minecraft.etcdchat.model.MCMessage
 import cat.kiwi.minecraft.etcdchat.model.Message

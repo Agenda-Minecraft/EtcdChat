@@ -13,14 +13,26 @@ repositories {
     mavenCentral()
     maven(url="https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven(url="https://oss.sonatype.org/content/repositories/snapshots")
+    maven(url="https://repo.extendedclip.com/content/repositories/placeholderapi")
 }
 
 dependencies {
     implementation("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
-    implementation("net.md-5:bungeecord-api:1.16-R0.5-SNAPSHOT")
     implementation("io.etcd:jetcd-core:0.6.1")
     implementation("com.google.code.gson:gson:2.8.9")
+    implementation("me.clip:placeholderapi:2.9.2")
     testImplementation(kotlin("test"))
+}
+
+tasks {
+    named<ShadowJar>("shadowJar") {
+        mergeServiceFiles()
+        archiveBaseName.set("EtcdChat")
+        dependencies {
+            exclude(dependency("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT"))
+            exclude(dependency("me.clip:placeholderapi:2.9.2"))
+        }
+    }
 }
 
 tasks.test {
