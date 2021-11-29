@@ -1,20 +1,11 @@
 package cat.kiwi.minecraft.etcdchat.model
 
+import com.google.gson.Gson
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 
-class Message(
-    @Expose
-    @SerializedName("source")
-    val source: String,
-    @Expose
-    @SerializedName("target")
-    val target: String,
-    @Expose
-    @SerializedName("pattern")
-    val pattern: String,
-    @Expose
-    @SerializedName("message")
+data class MCMessage(
     val message: String,
 )
+
+fun MCMessage.tagPrivate(source: String, target: String) = Message("private", PrivateMessage(source, target), this)
+fun MCMessage.tagPublic() = Message("public", PublicMessage(true), this)
